@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 240" width="860" height="240">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070b14"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#091526"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="50%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+    <filter id="glow" x="-15%" y="-15%" width="130%" height="130%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <style>
+      .title { font: 700 18px 'Segoe UI', system-ui, sans-serif; fill: #f8fafc; }
+      .sub { font: 500 11.5px 'Segoe UI', system-ui, sans-serif; fill: #94a3b8; }
+      .code { font: 600 12.5px 'Cascadia Code', 'Fira Code', 'Consolas', monospace; }
+      .scope { font: 600 10.5px 'Cascadia Code', 'Consolas', monospace; fill: #cbd5e1; }
+      .kw { fill: #f472b6; }
+      .fn { fill: #38bdf8; }
+      .vf { fill: #10b981; }
+      .at { fill: #f59e0b; }
+      .ef { fill: #a855f7; }
+      .ty { fill: #2dd4bf; }
+      .nm { fill: #fde047; }
+      .tx { fill: #e2e8f0; }
+      .cm { fill: #64748b; font-style: italic; }
+      .pulse { animation: pulseGlow 3.2s ease-in-out infinite; }
+      .scan { animation: scanLine 5s linear infinite; }
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.78; }
+        50% { opacity: 1; }
+      }
+      @keyframes scanLine {
+        0% { transform: translateY(0px); opacity: 0.18; }
+        50% { transform: translateY(152px); opacity: 0.35; }
+        100% { transform: translateY(0px); opacity: 0.18; }
+      }
+    </style>
+  </defs>
+
+  <rect width="860" height="240" rx="14" fill="url(#bg)" stroke="#1e293b" stroke-width="1.5"/>
+  <rect x="0" y="0" width="860" height="4" rx="2" fill="url(#accent)"/>
+
+  <!-- Header Bar -->
+  <rect x="16" y="14" width="828" height="36" rx="8" fill="#0b1324" stroke="#1e293b"/>
+  <circle cx="34" cy="32" r="5.5" fill="#ef4444"/>
+  <circle cx="52" cy="32" r="5.5" fill="#f59e0b"/>
+  <circle cx="70" cy="32" r="5.5" fill="#10b981"/>
+  <text x="94" y="37" class="title">lume.tmLanguage</text>
+  <text x="255" y="36" class="sub">source.lume · Official TextMate, VS Code, GitHub Linguist, Zed &amp; Neovim Grammar</text>
+  <rect x="724" y="21" width="108" height="22" rx="11" fill="#064e3b" stroke="#10b981"/>
+  <text x="778" y="36" text-anchor="middle" class="scope" fill="#6ee7b7">Lume v1.1.0</text>
+
+  <!-- Left Code Window -->
+  <rect x="16" y="58" width="520" height="166" rx="10" fill="#050912" stroke="#1e293b"/>
+  <rect class="scan" x="18" y="62" width="516" height="16" fill="url(#accent)" opacity="0.2"/>
+
+  <text x="30" y="80" class="code">
+    <tspan class="cm">## Formal QF_LIA + Constant-Time @secret + Effect Row Grammar</tspan>
+  </text>
+  <text x="30" y="101" class="code">
+    <tspan class="at">@secret</tspan><tspan class="tx"> </tspan><tspan class="at">@bound</tspan><tspan class="tx">(cycles: </tspan><tspan class="nm">32</tspan><tspan class="tx">)</tspan>
+  </text>
+  <text x="30" y="122" class="code">
+    <tspan class="kw">pub fn</tspan><tspan class="tx"> </tspan><tspan class="fn">vault_transfer</tspan><tspan class="tx">(bal: </tspan><tspan class="ty">int</tspan><tspan class="tx">, amt: </tspan><tspan class="ty">int</tspan><tspan class="tx">) -&gt; </tspan><tspan class="ty">int</tspan><tspan class="tx"> </tspan><tspan class="ef">/ {io, net}</tspan>
+  </text>
+  <text x="30" y="143" class="code">
+    <tspan class="tx">    </tspan><tspan class="vf">requires</tspan><tspan class="tx"> bal &gt;= amt </tspan><tspan class="kw">and</tspan><tspan class="tx"> amt &gt;= </tspan><tspan class="nm">0</tspan>
+  </text>
+  <text x="30" y="164" class="code">
+    <tspan class="tx">    </tspan><tspan class="vf">ensures</tspan><tspan class="tx">  result == bal - amt </tspan><tspan class="vf">invariant</tspan><tspan class="tx"> result &gt;= </tspan><tspan class="nm">0</tspan>
+  </text>
+  <text x="30" y="185" class="code">
+    <tspan class="tx">= </tspan><tspan class="kw">match</tspan><tspan class="tx"> </tspan><tspan class="vf">verify</tspan><tspan class="tx">(bal - amt) </tspan><tspan class="kw">with handler</tspan>
+  </text>
+  <text x="30" y="206" class="code">
+    <tspan class="tx">    </tspan><tspan class="ty">Ok</tspan><tspan class="tx">(v) =&gt; v |&gt; audit_seal</tspan>
+  </text>
+
+  <!-- Right Scope Inspector Panel -->
+  <rect x="548" y="58" width="296" height="166" rx="10" fill="#091122" stroke="#1e293b"/>
+  <text x="564" y="80" class="sub" fill="#38bdf8">TOKEN SCOPE INSPECTOR (LIVE)</text>
+
+  <g class="pulse" filter="url(#glow)">
+    <rect x="562" y="90" width="268" height="22" rx="5" fill="#1e1b4b" stroke="#a855f7" stroke-width="0.8"/>
+    <text x="572" y="105" class="scope"><tspan fill="#f59e0b">@secret</tspan> → entity.name.attribute.lume</text>
+
+    <rect x="562" y="117" width="268" height="22" rx="5" fill="#064e3b" stroke="#10b981" stroke-width="0.8"/>
+    <text x="572" y="132" class="scope"><tspan fill="#10b981">requires</tspan> → storage.modifier.verification</text>
+
+    <rect x="562" y="144" width="268" height="22" rx="5" fill="#0c4a6e" stroke="#38bdf8" stroke-width="0.8"/>
+    <text x="572" y="159" class="scope"><tspan fill="#38bdf8">vault_transfer</tspan> → entity.name.function</text>
+
+    <rect x="562" y="171" width="268" height="22" rx="5" fill="#3b0764" stroke="#c084fc" stroke-width="0.8"/>
+    <text x="572" y="186" class="scope"><tspan fill="#c084fc">/ {io, net}</tspan> → meta.effect.lume</text>
+
+    <rect x="562" y="198" width="268" height="20" rx="5" fill="#31102f" stroke="#f472b6" stroke-width="0.8"/>
+    <text x="572" y="212" class="scope"><tspan fill="#f472b6">match / with handler</tspan> → keyword.control</text>
+  </g>
+</svg>

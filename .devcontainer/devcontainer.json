@@ -1,0 +1,14 @@
+{
+  "name": "lume.tmLanguage Sovereign Grammar Environment",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+  "postCreateCommand": "curl -fsSL https://raw.githubusercontent.com/OmegaSoftDLL/Lume/main/scripts/install.sh | sh",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "files.eol": "\n",
+        "editor.insertSpaces": true,
+        "editor.tabSize": 4
+      }
+    }
+  }
+}

@@ -1,0 +1,4 @@
+title: "lume.tmLanguage — Official Lume v1.1.0 Syntax Highlighting"
+description: "Official TextMate (.tmLanguage.json), VS Code & GitHub Linguist Grammar for the Lume v1.1.0 Sovereign Programming Language"
+theme: jekyll-theme-cayman
+markdown: kramdown

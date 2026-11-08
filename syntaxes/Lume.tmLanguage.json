@@ -1,11 +1,12 @@
 {
   "name": "Lume",
   "scopeName": "source.lume",
-  "fileTypes": ["lume"],
+  "fileTypes": ["lume", "src"],
   "patterns": [
     { "include": "#comments" },
     { "include": "#strings" },
     { "include": "#attributes" },
+    { "include": "#effects" },
     { "include": "#labels" },
     { "include": "#function-name" },
     { "include": "#character" },
@@ -47,6 +48,14 @@
       "captures": {
         "1": { "name": "punctuation.definition.attribute.lume" },
         "2": { "name": "entity.name.attribute.lume" }
+      }
+    },
+    "effects": {
+      "name": "meta.effect.lume",
+      "match": "(\\/)\\s*(pure|\\{[A-Za-z0-9_,\\s]*\\})",
+      "captures": {
+        "1": { "name": "keyword.operator.effect.lume" },
+        "2": { "name": "storage.modifier.effect.lume" }
       }
     },
     "labels": {
@@ -207,12 +216,16 @@
           "match": "\\b(?:pub|crate|own|mut|unsafe|total|par)\\b"
         },
         {
+          "name": "storage.modifier.verification.lume",
+          "match": "\\b(?:requires|ensures|invariant|law|verify)\\b"
+        },
+        {
           "name": "keyword.control.lume",
-          "match": "\\b(?:if|elif|else|match|for|while|loop|in|break|continue|return|defer|errdefer|fail|panic|assert|using|scope|spawn|select)\\b"
+          "match": "\\b(?:if|then|elif|else|match|with|handler|resume|for|while|loop|in|break|continue|return|defer|errdefer|fail|panic|assert|using|scope|spawn|select)\\b"
         },
         {
           "name": "keyword.declaration.lume",
-          "match": "\\b(?:let|var|requires|ensures|invariant|law|comptime|quote|unquote|splice|from|where|as|is|and|or|not)\\b"
+          "match": "\\b(?:let|var|comptime|quote|unquote|splice|from|where|as|is|and|or|not)\\b"
         },
         {
           "name": "support.function.builtin.lume",

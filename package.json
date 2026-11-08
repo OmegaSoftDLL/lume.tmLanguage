@@ -1,0 +1,42 @@
+{
+  "name": "lume-tmlanguage",
+  "displayName": "Lume Language Syntax & Formal Verification Grammar",
+  "description": "Official TextMate (.tmLanguage.json), VS Code & GitHub Linguist syntax highlighting for the Lume v1.1.0 Sovereign Programming Language (.lume & .src).",
+  "version": "1.1.0",
+  "publisher": "OmegaSoftDLL",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OmegaSoftDLL/lume.tmLanguage.git"
+  },
+  "homepage": "https://omegasoftdll.github.io/lume.tmLanguage/",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "lume",
+        "aliases": [
+          "Lume",
+          "lume"
+        ],
+        "extensions": [
+          ".lume",
+          ".src"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "lume",
+        "scopeName": "source.lume",
+        "path": "./syntaxes/Lume.tmLanguage.json"
+      }
+    ]
+  }
+}
